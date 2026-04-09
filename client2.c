@@ -55,14 +55,14 @@ int main(void){
     while (1)
     {
 
+        memset(message, 0, sizeof(message));
+        read(client_server,message,sizeof(message));
+        printf("\nClient : %s\n",message);
+
         memset(message,0,sizeof(message));
         printf("\nMessage : ");
         fgets(message,sizeof(message),stdin);
         write(client_server,message,strlen(message));
-
-        memset(message, 0, sizeof(message));
-        read(client_server,message,sizeof(message));
-        printf("\nClient : %s\n",message);
 
 
     }
